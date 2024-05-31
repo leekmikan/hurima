@@ -1,0 +1,16 @@
+.main{
+    overflow: hidden scroll;
+}
+#not_found{
+    text-align: center;
+}
+.items td{
+    margin:auto;
+    background: white;
+}
+.items input{
+    width: 18vw;
+}
+.items{
+    margin: auto;
+}

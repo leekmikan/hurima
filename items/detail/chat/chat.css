@@ -1,0 +1,59 @@
+.main{
+    overflow: hidden scroll;
+}
+.chat{
+    height: 120vh;
+}
+.I,.you{
+    background: white;
+    width: 40vw;
+    vertical-align: middle;
+    border-radius: 10px;
+    margin-bottom: 10vh;
+}
+.I{
+    margin-left: auto;
+    margin-right: 15vw;
+}
+.stat{
+    font-size: 12px;
+}
+.you{
+    margin-left: 15vw;
+}
+.msg{
+    text-align: right;
+    margin-right: 15vw;
+}
+textarea{
+    resize: none;
+    font-size: 20px;
+}
+@media only screen and (max-width: 979px) {
+    .chat{
+        height: 120vh;
+    }
+    .I,.you{
+        width: 40vw;
+        border-radius: 10px;
+        margin-bottom: 10vh;
+    }
+    .I{
+        margin-right: 5vw;
+    }
+    .stat{
+        font-size: 12px;
+    }
+    .you{
+        margin-left: 5vw;
+    }
+    .msg{
+        margin-right: 9vw;
+    }
+    textarea{
+        font-size: 16px;
+    }
+    .msg form input{
+        width: 45vw!important;
+    }
+}

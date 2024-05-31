@@ -1,0 +1,32 @@
+.form{
+    width: 90vw;
+    height: 200vh;
+}
+textarea{
+    resize: none;
+    font-size: 20px;
+    margin: 2vh auto;
+}
+select{
+    font-size: 20px;
+    width: 30vw;
+    margin: 2vh auto;
+}
+img{
+    width: 10vw;
+}
+.sam{
+    width: 15vw;
+}
+.cf{
+    text-align: right;
+    margin-right: 5vw;
+}
+@media only screen and (max-width: 979px) {
+    textarea{
+        font-size: 16px;
+    }
+    .cf input[type='submit']{
+        width: 45vw!important;
+    }
+}

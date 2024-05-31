@@ -1,0 +1,28 @@
+table{
+    margin:auto;
+    border-collapse: collapse;
+}
+td{
+    vertical-align:middle;
+}
+div{
+    text-align: center;
+}
+button{
+    padding: 0 10vw;
+}
+input[type="number"]{
+    font-size:24px;
+    width: 25vw;
+}
+@media only screen and (max-width: 979px) {
+    .main{
+        height: 150vh;
+    }
+    .main input[type="number"]{
+        font-size: 16px;
+    }
+    .main input[type="submit"]{
+        width: 45vw!important;
+    }
+}

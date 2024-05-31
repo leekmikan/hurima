@@ -1,0 +1,9 @@
+.contentA,.contentB{
+    width: 50vw;
+}
+.main{
+    display: flex;
+}
+textarea{
+    resize: none;
+}

@@ -1,0 +1,14 @@
+<?php
+$FEE = 0.1; //手数料の割合.
+$POINT = 0.01;//ポイントの割合.
+$SECRET = 'sk_test_51PAkRdBl4em3MIGoiz26aQbSB0AGZ64ILqtxlmNPS6Pc2GIk7J00H4MhhuKSb2sVmWBE27y5hlzlvIkCvApk9Jtb00wjWT4vid';
+$SQL_PASS = ''; //MySQLのパスワード
+$GENRE = ['ゲーム','小物','大型']; //カテゴリー 追加したら　data_change.php内の関数 Add_genre(追加した位置)　を実行すること.
+$STAT = ['未開封/新品','きれい','キズ/汚れ　少','キズ/汚れ　中','キズ/汚れ　多']; //状態　追加するときは必ず一番後ろに追加.
+$HSEND = ['配送方法１','配送方法２']; //配送方法  追加するときは必ず一番後ろに追加.
+$LIMIT = 100;
+$SUPPORT_LIMIT = 5; //支援者定員.
+$STRIPE_API = 'stripe-php-13.10.0-beta.3/stripe-php-13.10.0-beta.3/init.php';
+$ACCOUNT_ID = 'acct_1PAkRdBl4em3MIGo'; //StripeアカウントID.
+$QUIZ_ANS = '焼肉定食'; //クイズの答え.
+?>

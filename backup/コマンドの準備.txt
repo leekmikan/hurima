@@ -1,0 +1,2 @@
+ユーザーの環境変数例  PAHT
+D:\install\Xampp\mysql\bin

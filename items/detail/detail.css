@@ -1,0 +1,56 @@
+.contentA,.contentB{
+    width: 50vw;
+}
+.main{
+    display: flex;
+}
+.pic{
+    object-fit: cover;
+    width: 40vw;
+    height: 40vw;
+}
+.sel{
+    object-fit: cover;
+    width: 10vw;
+    height: 10vw;
+}
+.info{
+    width: 45vw;
+    height: 45vh;
+    background: white;
+}
+.big_info{
+    width: 45vw;
+    height: 140vh;
+    background: white;
+}
+.cB_button{
+    width: 45vw;
+}
+@media only screen and (max-width: 979px) {
+    .pic{
+        width: 45vw;
+        height: 45vw;
+    }
+    .sel{
+        object-fit: cover;
+        width: 11vw;
+        height: 11vw;
+    }
+    .info{
+        width: 45vw;
+        height: 140vh;
+        background: white;
+    }
+    .big_info{
+        width: 45vw;
+        height: 150vh;
+        background: white;
+    }
+    .contentB form input{
+        width: 45vw!important;
+    }
+    .sp_icon{
+        width: 5vw;
+    }
+}

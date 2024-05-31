@@ -1,0 +1,22 @@
+.tb{
+    margin:auto;
+    height: 75vh;
+}
+.tb button{
+    width: 15vw;
+    height: 15vh;
+    margin: 2vh 2vw;
+    font-size: 18px;
+}
+.tb input{
+    width: 15vw;
+    height: 15vh;
+    margin: 2vh 2vw;
+    font-size: 18px;
+}
+@media only screen and (max-width: 979px) {
+    .tb button{
+        width: 18vw;
+        font-size: 12px;
+    }
+}
