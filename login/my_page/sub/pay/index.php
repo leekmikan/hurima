@@ -7,7 +7,7 @@
 	<link rel="icon" type="image/jpg" href="../../../../img/icon.jpg">
 	<link rel="apple-touch-icon" sizes="180x180" href="../../../../img/icon.jpg">
 	<link rel="stylesheet" href="../../../../main.css">
-	<link rel="stylesheet" href="pay.css">
+	<link rel="stylesheet" href="../../../../cart/confirm/pay/pay.css">
 	<script src="https://js.stripe.com/v3/"></script>
 	</head>
 		<body>

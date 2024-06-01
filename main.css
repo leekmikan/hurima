@@ -1,38 +1,55 @@
+/*背景*/
 body{
     background-color: #F0F0F0;
     margin: 0;
 }
+
+/*全体的なボタン*/
 button{
     background: #00A0FF;
     height: 35px;
     text-align: center;
 }
+
+/*全体的な送信ボタン*/
 input[type="submit"]{
     background: #00A0FF;
 }
+
+/*中央寄せ用*/
 .ct{
     text-align: center;
 }
+
+/*中身なくても十分な高さをとる用*/
 .main{
     height: 80vw;
 }
+
 /*ヘッダー関係*/
 header{ 
     background: #FFFFFF;
 }
+
+/*ロゴのサイズ*/
 .logo{
    width: 10vw;
 }
+
+/*検索欄*/
 .search{
     width: 30%;
     font-size: 18px;
     margin: 0px;
 }
+
+/*ヘッダー内ボタン*/
 header button{
     padding: 0 20px;
     margin: 10px 2.8vw;
 }
 
+/*検索ボタン*/
 #sb{
     margin: 0;
 }
@@ -41,45 +58,52 @@ header button{
 footer{ 
     background: #FFFFFF;
 }
+/*利用規約などのテーブル*/
 footer table{
     width: 95vw;
 }
 footer td{
     width: 20vw;
 }
+
+/*リンクボタン*/
 footer button{
     padding: 0 20px;
     margin: 10px 25px;
 }
+
+/*ヘッダーがないページのタイトル*/
 #title{
     margin-top: 0;
 }
 
+/*商品画像*/
 .item_img{
     object-fit: cover;
     width: 10vw;
     height: 15vw;
 }
+/*検索欄の検索ボタン以外のsubmitボタン*/
 input[type="submit"]:not(#sb):not(.dis){
     width: 20vw;
     height: 8vh;
 }
+/*エラー文(パスワードミスなど)*/
 .err{
     color: #FF0000;
 }
 
+/*カテゴリー選択*/
 ul {
     overflow:hidden;
     list-style:none;
     margin: 0 auto;
     z-index: 20;
 }
-    
 ul li {
     display: inline-block;
     padding: 5px 20px 5px 20px;
 }
-
 header .tab{
     z-index: 10;
     height: 32px;
@@ -88,7 +112,6 @@ header .tab{
     z-index: 2;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.25);
 }
-
 .tabt{
     text-transform: uppercase;
     text-align: center;
@@ -122,12 +145,15 @@ header .tab{
     -ms-transform: scale(1, 1);
     transform: scale(1, 1)
 }
+
 #pgForm a{
     font-size: 24px;
 }
+/*公式マークなど(商品詳細ページ)*/
 .sp_icon{
     width: 4%;
 }
+/*ホームに表示されるニュース*/
 .article{
     width: 30%;
     height: 30%;
@@ -135,9 +161,12 @@ header .tab{
     display: inline-block;
     background-color: #808080;
 }
+/*ニュースアイコン*/
 .article img{
     width: 50%;
 }
+
+/*以下スマホ用*/
 @media only screen and (max-width: 979px) {
     .search{
         width: 50%;

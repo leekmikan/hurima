@@ -1,9 +1,13 @@
+/*メッセージが多ければスクロール*/
 .main{
     overflow: hidden scroll;
 }
+/*高さ確保*/
 .chat{
     height: 120vh;
 }
+
+/*メッセージ枠*/
 .I,.you{
     background: white;
     width: 40vw;
@@ -11,24 +15,36 @@
     border-radius: 10px;
     margin-bottom: 10vh;
 }
+
+/*自分のメッセージ(右側)*/
 .I{
     margin-left: auto;
     margin-right: 15vw;
 }
+
+/*時刻 既読表示*/
 .stat{
     font-size: 12px;
 }
+
+/*相手のメッセージ(左)*/
 .you{
     margin-left: 15vw;
 }
+
+/*メッセージ本文*/
 .msg{
     text-align: right;
     margin-right: 15vw;
 }
+
+/*メッセージ入力欄*/
 textarea{
     resize: none;
     font-size: 20px;
 }
+
+/*以下スマホ用*/
 @media only screen and (max-width: 979px) {
     .chat{
         height: 120vh;

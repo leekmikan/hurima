@@ -1,32 +1,47 @@
+/*2段組み*/
 .contentA,.contentB{
     width: 50vw;
 }
+
+/*全体*/
 .main{
     display: flex;
 }
+
+/*商品サムネイル*/
 .pic{
     object-fit: cover;
     width: 40vw;
     height: 40vw;
 }
+
+/*商品画像(サムネイル以外)*/
 .sel{
     object-fit: cover;
     width: 10vw;
     height: 10vw;
 }
+
+/*出品者情報(左下)*/
 .info{
     width: 45vw;
     height: 45vh;
     background: white;
 }
+
+/*商品情報(右)*/
 .big_info{
     width: 45vw;
     height: 140vh;
     background: white;
 }
+
+/*確認、通報、カートボタン*/
 .cB_button{
     width: 45vw;
 }
+
+/*以下スマホ用*/
 @media only screen and (max-width: 979px) {
     .pic{
         width: 45vw;

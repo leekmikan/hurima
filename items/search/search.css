@@ -1,3 +1,4 @@
+/*中央白欄*/
 .form{
     background-color: white;
     margin: 10px auto;
@@ -5,27 +6,38 @@
     width: 50vw;
     height: 150vh;
 }
+
+/*中央寄せ*/
 .div_button{
     text-align: center;
 }
+
+/*入力欄*/
 input{
     width: 30vw;
     font-size: 16px;
     padding: 10px 0;
     margin: 2vh;
 }
+
+/*ボタン間隔*/
 button{
     margin: 5vh;
 }
+
+/*選択リスト*/
 select{
     width: 30vw;
     font-size: 16px;
     padding: 10px 0;
     margin: 2vh;
 }
+
+/*金額範囲入力欄*/
 .range select{
     width: 25vw;
 }
+/*X～Y*/
 .range{
     justify-content: center;
     display: flex;

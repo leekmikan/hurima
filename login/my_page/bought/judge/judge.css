@@ -1,7 +1,9 @@
-
+/*ボタン*/
 button{
 text-align:center;
 }
+
+/*星*/
 input[name="judge[]"]{
 display: none;
 }

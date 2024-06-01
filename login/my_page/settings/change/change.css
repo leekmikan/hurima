@@ -1,9 +1,12 @@
+/*二段組*/
 .contentA,.contentB{
     width: 50vw;
 }
 .main{
     display: flex;
 }
+
+/*説明*/
 textarea{
     resize: none;
 }

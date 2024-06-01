@@ -1,3 +1,4 @@
+/*ボタン用テーブル*/
 .tb{
     margin:auto;
     height: 75vh;
@@ -14,6 +15,13 @@
     margin: 2vh 2vw;
     font-size: 18px;
 }
+
+/*戻る*/
+button{
+    width: 15vw;
+}
+
+/*以下スマホ用*/
 @media only screen and (max-width: 979px) {
     .tb button{
         width: 18vw;

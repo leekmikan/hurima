@@ -1,3 +1,4 @@
+/*カートの中身を表示するテーブル*/
 table{
     margin:auto;
     border-collapse: collapse;
@@ -5,16 +6,24 @@ table{
 td{
     vertical-align:middle;
 }
+
+/*テーブルなどを一括中央寄せ*/
 div{
     text-align: center;
 }
+
+/*カート用ボタン*/
 button{
     padding: 0 10vw;
 }
+
+/*合計金額*/
 input[type="number"]{
     font-size:24px;
     width: 25vw;
 }
+
+/*スマホ用*/
 @media only screen and (max-width: 979px) {
     .main{
         height: 150vh;

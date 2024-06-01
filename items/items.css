@@ -1,16 +1,25 @@
+/*商品 多かったらスクロール*/
 .main{
     overflow: hidden scroll;
 }
+
+/*見つかりませんでした用*/
 #not_found{
     text-align: center;
 }
+
+/*商品一覧用テーブル*/
 .items td{
     margin:auto;
     background: white;
 }
+
+/*商品画像(クリック可)*/
 .items input{
     width: 18vw;
 }
+
+/*商品*/
 .items{
     margin: auto;
 }
