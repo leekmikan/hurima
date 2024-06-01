@@ -57,6 +57,7 @@
 				</table>
 			</footer>
 		</body>
+		<script src="../../../../const.js"></script>
 		<script src="main.js"></script>
 	</head>
 </html>

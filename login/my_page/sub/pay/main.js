@@ -1,4 +1,4 @@
-const stripe = Stripe('pk_test_51Oc661JxkDprX6uJ5z2Y568XkjR4zHZec9iUdZYv6baMlIPpcRptdsQNQ2GRsas7P9OkdUWOaYsFm9YDV70mNiiv00Tzc8eBcZ');
+const stripe = Stripe(PUBLIC_KEY);
 const options = {
   clientSecret: items['clientSecret'],
 };

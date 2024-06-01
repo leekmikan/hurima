@@ -28,7 +28,7 @@
 					$data = $stmt->fetch_array(MYSQLI_ASSOC);
 					require_once '../../../server/const.php';
 					if(is_null($data['sub'])){
-						echo '<button style="width: 20vw;height: 20vh" onclick="location.href=\'pay/index.php\'">手数料パス(1か月)<br>550円</button><p>売上の手数料が0円になります。</p>';
+						echo '<button style="width: 20vw;height: 20vh" onclick="location.href=\'pay/index.php\'">手数料パス(550円/月)<br>売上の手数料が0円になります。</button><br>';
 					}else{
 						require_once '../../../server/'.$STRIPE_API;
 						$stripe = new \Stripe\StripeClient($SECRET);
@@ -41,7 +41,7 @@
 							echo '<p>'.date('Y-m-d H:i:s',$sub['current_period_end']).'まで取り消し可能</p>';
 						}
 						else{
-							echo '<button style="width: 20vw;height: 20vh" onclick="location.href=\'pay/index.php\'">手数料パス(1か月)<br>550円</button><p>売上の手数料が0円になります。</p>';
+							echo '<button style="width: 20vw;height: 20vh" onclick="location.href=\'pay/index.php\'">手数料パス(550円/月)</button><p>売上の手数料が0円になります。</p>';
 						}
 					}
 					echo '<br>';
@@ -52,8 +52,8 @@
 						echo '<h2>支援者登録済み</h2>';
 					}
 				?>
-				<br>
-				<button style="width: 50vw;height: 10vh" onclick="location.href='../index.php'">戻る</button>
+				<br><br>
+				<button onclick="location.href='../index.php'">戻る</button>
                 </div>
 			<footer>
 				<table>

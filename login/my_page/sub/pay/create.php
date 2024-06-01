@@ -2,9 +2,7 @@
 
 require_once '../../../../server/const.php';
 require_once '../../../../server/'.$STRIPE_API;
-
 $stripe = new \Stripe\StripeClient($SECRET);
-
 try {
     $mysqli = new mysqli("localhost", "root", "", "hurima_data");
 	$stmt = $mysqli->query('SELECT * FROM users WHERE id = "'.$_SESSION['id'].'";');

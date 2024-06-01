@@ -2,7 +2,7 @@
 <html lang="ja">
 	<head>
 	<meta charset="uft-8">
-	<title>手数料パスの購入</title>
+	<title>手数料パスの解約</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" type="image/jpg" href="../../../../img/icon.jpg">
 	<link rel="apple-touch-icon" sizes="180x180" href="../../../../img/icon.jpg">
@@ -19,7 +19,7 @@
 					header('Location:../../../index.php');exit;
 				}
 				?>
-                <h1 id="title">手数料パスの購入</h1>
+                <h1 id="title">手数料パスの解約</h1>
 			</header>
 				<div class="main ct">
 					<?php
