@@ -12,6 +12,7 @@
 		<body>
 			<header>
 				<?php
+				//クイズネタがあれば提案
 				session_start();
 				if (isset($_SESSION['id'])) {
 					if(isset($_POST['ans'])){
