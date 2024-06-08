@@ -1,5 +1,5 @@
 <?php
-
+//変更いらないはず
 require_once '../../../server/const.php';
 require_once '../../../server/'.$STRIPE_API;
 

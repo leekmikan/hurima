@@ -44,6 +44,7 @@
 			<form name="myForm" method="post" action="pay/index.php">
 				<br>
 				<?php
+				//カート表示 なければ前のページに戻る
 				if (isset($_SESSION['id'])) {
 						$ar = json_decode($data['cart']);
 						$found = false;

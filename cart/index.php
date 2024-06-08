@@ -49,6 +49,7 @@
 			<div class="main">
 			<form name="myForm" method="post" action="confirm/index.php">
 			<?php
+			    //カート表示 なければ空と表示
 				if (isset($_SESSION['id'])) {
 						$ar = json_decode($data['cart']);
 						$found = false;

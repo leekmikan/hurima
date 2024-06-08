@@ -24,6 +24,7 @@
 					header('Location:../../../login/index.php');exit;
 				}
 			?>
+			<!--Stripeが自動でレイアウト変更-->
 			<div id="payment-element"></div>
 			<br><br>
 			<div id="card-errors"></div>
