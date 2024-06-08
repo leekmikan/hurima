@@ -48,6 +48,7 @@
 			<div class="main">
 				<div class="chat">
 					<?php
+					    //商品がある　出品者がいる　ブロックしていないされていない時メッセージ可
 						if(is_null($item_data)){
 							echo '<div class="ct">';
 							echo '<h1>商品が存在しません</h1>';
@@ -66,15 +67,18 @@
 						else{
 							$stmt3 = $mysqli->query('SELECT * FROM msg WHERE item_id = "'.$_POST['detail'].'" AND buy_id = "'.$_SESSION['id'].'" ORDER BY tm;');
 							while($row = $stmt3->fetch_array(MYSQLI_ASSOC)) {
+								//自身のメッセージ
 								if($row['buy_id'] == $row['send_id']){
 									echo '<div class="I">';
 									echo '<p>'.nl2br($row['txt']).'</p>';
+									//既読か
 									if($row['rd']){
 										echo '<p class="stat">'.$row['tm'].'　既読</p>';
 									}else{
 										echo '<p class="stat">'.$row['tm'].'</p>';
 									}
 								}else{
+								    //相手
 									echo '<div class="you">';
 									echo '<p>'.nl2br($row['txt']).'</p>';
 									echo '<p class="stat">'.$row['tm'].'</p>';
@@ -88,6 +92,7 @@
 				<div class="msg">
 					<form name="myForm" method="post" action="confirm/index.php">
 						<?php
+						    //ブロックされていないときメッセージ送信可
 							if(!$bk && isset($_POST['detail'])){
 								echo '<textarea name="msg" cols="40" rows="8"></textarea><br>';
 								echo '<input type="submit" value="メッセージの内容を確認">';
@@ -97,6 +102,7 @@
 					</form>
 					<form onsubmit="return confirm('ブロックしますか？')" name="myForm2" method="post" action="index.php">
 						<?php
+						    //ブロック
 							if(!$bk && isset($_POST['detail'])){
 								echo '<br>';
 								echo '<input type="submit" value="ブロック">';

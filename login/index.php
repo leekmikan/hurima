@@ -25,6 +25,7 @@
                 	$stmt = $mysqli->query('SELECT * FROM users WHERE mail = "'.$_POST['email'].'" AND pass = "'.$_POST['password'].'" LIMIT 1;');
 					$data = $stmt->fetch_array(MYSQLI_ASSOC);
 					if(!mysqli_num_rows($stmt) == 0){
+					    //凍結判定
 						if($data['frag'] % 2 == 1){
 							echo '<div class="ct"><p style="color: red;">このアカウントは凍結されています。</p></div>';
 						}else{
@@ -45,6 +46,7 @@
 			<div class="form">
 			<form name="myForm" method="post" action="index.php">
 				<?php
+				//パスワード入力欄
 				if(!isset($_SESSION['id'])){
 					echo '<label for="email">メールアドレス</label>';
 					echo '<input type="email" name="email" placeholder="メールアドレスを入力" ><br>';

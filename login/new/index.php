@@ -17,6 +17,7 @@
 				<h1 id="title">新規会員登録</h1>
 			</header>
 			<div class="form">
+			    <!--いろいろ情報入力欄-->
 				<form name="myForm" action="confirm/index.php" method="post" onsubmit="return check()">
 				<label for="user_name">ニックネーム　</label>
 				<input type="text" id="user_name" name="user_name" placeholder="名前を入力" ><br>

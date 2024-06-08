@@ -23,6 +23,7 @@
 				session_start();
 				$token = uniqid('', true);
                 $_SESSION['token'] = $token;
+                //入力されたものを全部表示 hiddenは送信用
 				echo '<input type="hidden" name="token" value="'.$token.'">';
 				echo $_POST['user_name'];
 				echo '<input name="user_name" type="hidden" value="'.$_POST['user_name'].'"/input>';

@@ -16,11 +16,6 @@
     font-size: 18px;
 }
 
-/*戻る*/
-button{
-    width: 15vw;
-}
-
 /*以下スマホ用*/
 @media only screen and (max-width: 979px) {
     .tb button{

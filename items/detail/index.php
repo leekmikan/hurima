@@ -58,13 +58,18 @@
 					$data = $stmt->fetch_array(MYSQLI_ASSOC);
 					$stmt2 = $mysqli->query('SELECT * FROM users WHERE id = "'.$data['user_id'].'" LIMIT 1;');
 					$user_data = $stmt2->fetch_array(MYSQLI_ASSOC);
+					//データベースのfragの下位1ビットから凍結判定
 					if($user_data['frag'] % 2 == 1){
 						echo '<div class="ct"><p style="color: red;">凍結されているアカウントの商品です。</p></div>';
 					}
+					//左側
 					echo '<div class="contentA">';
+					//画像があればbase64からデコードして張り付け　なければnoimage.jpg
 					for ($i = 0;$i < 5;$i++){
+					    //通常画像クラス
 						$class = "sel";
 						if($i == 0){
+						    //サムネclass
 							$class = "pic";
 						}
 						if($data['src'. strval($i)] == "0"){
@@ -74,15 +79,19 @@
 							echo '<img class="'.$class.'" src="'.$img.'">';
 						}
 					}
+					//商品状態　発送元などの情報
 					echo '<div class="info">';
 					require_once '../../server/const.php';
 					$add_image = '';
+					//公式
 					if(($user_data['frag'] >> 1) % 2 == 1){
 						$add_image .= '<img class="sp_icon" src="../../img/offical.jpg">';
 					}
+					//管理者
 					if(($user_data['frag'] >> 2) % 2 == 1){
 						$add_image .= '<img class="sp_icon" src="../../img/administrator.jpg">';
 					}
+					//ユーザー情報へのリンク
 					echo '<a href="user_info/index.php?id='.$user_data['id'].'">出品者:　'.$user_data['user_name'].'</a>'.$add_image.'<br>';
 					echo '<p>カテゴリー:　'.$GENRE[$data['genre']].'</p>';
 					echo '<p>状態:　'.$STAT[$data['stat']].'</p>';
@@ -90,8 +99,10 @@
 					echo '<p>配送元:　'.$user_data['adress'].'</p>';
 					echo '</div>';
 					echo '</div>';
+					//右側
 					echo '<div class="contentB">';
 					echo '<div class="big_info">';
+					//商品名　価格　説明
 					echo '<h1>'.$data['item_name'].'</h1>';
 					echo '<h2><span name="price">'.$data['price'].'</span>円</h2><br>';
 					echo '<p>商品説明</p>';
@@ -106,6 +117,7 @@
 				?>
 				<br>
 					<?php
+					//カートの中に同じ商品が入っていないかつ自身の商品でなければ「カートに入れる」を表示
 					if(isset($_GET['detail']) && isset($_SESSION['id'])){
 						$stmt2 = $mysqli->query('SELECT * FROM users WHERE id = "'.$_SESSION['id'].'" LIMIT 1;');
 						$user_data = $stmt2->fetch_array(MYSQLI_ASSOC);
@@ -123,6 +135,7 @@
 					<br>
 					<form name="myForm" method="post" action="chat/index.php">
 						<?php
+						//自分の商品でなければ「メッセージを送る」を表示
 						if(isset($_SESSION['id']) && isset($data['user_id']) && isset($_GET['detail'])){
 							if($_SESSION['id'] != $data['user_id']){
 								echo '<input type="submit" value="メッセージを送る">';
@@ -134,6 +147,7 @@
 					<br>
 					<form name="myForm" method="post" action="report/index.php">
 						<?php
+						//通報していないかつ自身でなければ「通報」を表示
 						if(isset($_SESSION['id']) && isset($data['user_id']) && isset($_GET['detail'])){
 							$stmt2 = $mysqli->query('SELECT * FROM report WHERE who = "'.$_SESSION['id'].'" AND item_id = "'.$_GET['detail'].'" LIMIT 1;');
 							if($_SESSION['id'] != $data['user_id'] && mysqli_num_rows($stmt2) == 0){

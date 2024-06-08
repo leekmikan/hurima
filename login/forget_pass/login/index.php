@@ -23,7 +23,8 @@
 							$mysqli->query('DELETE FROM forget WHERE id = "'.$data['id'].'";');
 							$stmt = $mysqli->query('SELECT * FROM users WHERE id = "'.$data['id'].'" LIMIT 1;');
 							$data = $stmt->fetch_array(MYSQLI_ASSOC);
-							Send_mail($data['mail'], "パスワード", "<html><body><p>パスワード:".$data['pass']."</h1></body></html>");
+							//HTMLメールを送信
+							Send_mail($data['mail'], "パスワード", "<html><body><p>パスワード:</p><h1>".$data['pass']."</h1></body></html>");
 							header('Location:../../index.php');exit;
 						}else{
 							$err = true;
@@ -43,7 +44,7 @@
 						echo '<p class="err">コードがまちがえているか、期限が切れています。</p>';
 					}
 				?>
-					<p>メールに送信されたコードを入力してください。</p>
+				<p>メールに送信されたコードを入力してください。</p>
 				</div>
 				<form name="myForm" method="post" action="index.php">
 				<label for="num">コード　</label>

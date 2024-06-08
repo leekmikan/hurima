@@ -40,6 +40,7 @@
 				<h1 id="title">メッセージの内容を確認</h1>
 			</header>
 			<?php
+			    //送り先確認
 				if(isset($user_data) && isset($sell_data)){
 					echo '<h2><span>'.$user_data['user_name'].'</span>　さんから　<span>'.$sell_data['user_name'].'</span>　さんへのメッセージ</h2>';
 				}
@@ -49,6 +50,7 @@
 			</div>
 			<div class="form">
 				<?php 
+				    //メッセージ内容
 					if(isset($_POST['msg'])){
 						echo '<p>'.nl2br($_POST['msg']).'</p>';
 					}
@@ -57,6 +59,7 @@
 			<div class="ct">
 			<form name="myForm" method="post" action="index.php">
 				<?php 
+				    //送信
 					if(isset($_POST['msg']) && isset($_POST['detail'])){
 						echo '<input type="submit" value="送信する">';
 						echo '<input type="hidden" name="pos" value="'.$_POST['msg'].'">';

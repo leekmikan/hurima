@@ -40,6 +40,7 @@
 				<?php
 				require_once '../server/const.php';
 				session_start();
+				//検索
 				$query = " FROM items WHERE buy_id IS NULL";
 				$mysqli = new mysqli("localhost", "root", "", "hurima_data");
 				$vp = 0;
@@ -81,11 +82,13 @@
 				$stmt = $mysqli->query("SELECT *" . $query . $lim . ";");
 				$hit = mysqli_num_rows($mysqli->query("SELECT id" . $query . ";")) ;
 				$i=0;
+				//検索条件にあう商品があれば現在のページ番号と商品を表示
 				if(mysqli_num_rows($stmt) == 0){
 					echo '<h2>お探しの商品は見つかりませんでした</h2>';
 				}else{
 					echo '<p>'.($vp * $LIMIT + 1).'～'.min(($vp + 1) * $LIMIT,mysqli_num_rows($stmt)).'件を表示　(全'.$hit.'件)</p>';
 				}
+				//商品表示
     			while($row = $stmt->fetch_array(MYSQLI_ASSOC)) {
 					if($i % 5 == 0){
 						echo '<tr>';
@@ -117,6 +120,7 @@
 			<button onclick="location.href='search/index.php'">詳細検索</button>
 			<br><br>
 			<?php
+			    //ページ番号表示
 				echo '<form id="pgForm" name="pgForm" method="get" action="index.php">';
 				echo '<input type="hidden" name="query" value="'.$query.'">';
 				echo '<input type="hidden" id="page" name="page" value="0">';

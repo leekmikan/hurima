@@ -64,6 +64,7 @@
 						break;
 					}
 				?>
+				<!--ニックネーム　アドレス入力欄-->
 				<form name="myForm" method="post" action="index.php">
 					<label for="nick">ニックネーム　　</label>
 					<input type="text" name="nick" placeholder="ニックネーム" ><br>
