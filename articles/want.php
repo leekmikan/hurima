@@ -42,6 +42,8 @@
                     <p>形式：[種類]商品(買い取り予定価格　?...適正価格不明、適当)</p>
                     <ol>
                         <li>[CD]初音ミク Project mirai こんぷりーと(6,000)</li>
+						<li>[CD]初音ミク -Project DIVA-Original Song Collection(中800　新3,200)</li>
+						<li>[CD]初音ミク -Project DIVA-X Complete Collection(2,800)</li>
                         <li>[CD]初音ミク Project DIVA Arcade Original Song Collection Vol.3(1,000)</li>
                         <li>[CD]股関節脱臼(1,000)</li>
                         <li>[CD]トランジスタの道化師～Heartsnative3～(1,000)</li>
