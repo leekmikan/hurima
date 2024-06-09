@@ -24,6 +24,7 @@
 			</header>
 			<p class="err">初回出品者は次のファイルを読むことを推奨します<br>初回のみ出品後にStripeの連携があります</p>
 			<p><a href="reg.pdf" download="Stripeの連携方法.pdf">Stripeの連携方法</a></p>
+			<!--入力した内容を確認 <input type="hidden"...>はすべて送信用-->
 			<div class="form">
 			<form name="myForm" method="post" action="reg.php">
 				<p>商品名</p>
@@ -73,6 +74,7 @@
 				$_SESSION['token'] = $token;
 				echo '<input type="hidden" name="token" value="'.$token.'">';
 				 ?>
+				<!--出品ボタン-->
 				<div class="ct">
 				<input type="submit" value="出品する">
 				</div>
@@ -101,6 +103,5 @@
 				</table>
 			</footer>
 		</body>
-		<script src="main.js"></script>
 	</head>
 </html>

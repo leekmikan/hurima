@@ -11,6 +11,7 @@
 	</head>
 		<body>
 			<?php
+			//他ページのchatディレクトリーの内容と同じ
 				session_start();
 				if (isset($_SESSION['id']) && isset($_POST['msg']) && isset($_POST['detail'])) {
 					$token = uniqid('', true);
@@ -83,6 +84,5 @@
 				</table>
 			</footer>
 		</body>
-		<script src="main.js"></script>
 	</head>
 </html>

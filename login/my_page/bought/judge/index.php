@@ -42,17 +42,18 @@
 			</header>
 			<div class="main ct">
 				<p>評価</p>
+				<!--横並びに星が並ぶ-->
 				<form name="myForm" method="post" action="index.php">
 					<input type="checkbox" id="0" name="judge[]" value="1">
-					<img name="star" class="jt" onclick="ch(0)" src="無題2.png">
+					<img name="star" class="jt" onclick="ch(0)" src="../../../../img/star.png">
 					<input type="checkbox" id="1" name="judge[]" value="2">
-					<img name="star" class="jt" onclick="ch(1)" src="無題2.png">
+					<img name="star" class="jt" onclick="ch(1)" src="../../../../img/star.png">
 					<input type="checkbox" id="2" name="judge[]" value="3">
-					<img name="star" class="jt" onclick="ch(2)"  src="無題2.png">
+					<img name="star" class="jt" onclick="ch(2)"  src="../../../../img/star.png">
 					<input type="checkbox" id="3" name="judge[]" value="4">
-					<img name="star" class="jt" onclick="ch(3)"  src="無題2.png">
+					<img name="star" class="jt" onclick="ch(3)"  src="../../../../img/star.png">
 					<input type="checkbox" id="4" name="judge[]" value="5">
-					<img name="star" class="jt" onclick="ch(4)"  src="無題2.png"><br>
+					<img name="star" class="jt" onclick="ch(4)"  src="../../../../img/star.png"><br>
 					<?php
 						if(isset($_POST['detail'])){
 							echo '<p>理由/コメント</p>';

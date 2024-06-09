@@ -24,6 +24,7 @@
 			<header>
 				<h1 id="title">出品</h1>
 			</header>
+			<!--商品名　価格などの入力欄 <input type="hidden"...>はすべて送信用-->
 			<div class="form">
 				<form name="myForm" method="post" action="confirm/index.php" onsubmit="return check()">
 				<label for="name">商品名</label>
@@ -32,6 +33,7 @@
 				<input type="number" name="price" id="price" placeholder="価格" pattern="\d+" min="1" step="1" max="1000000"><br>
 				<label for="images">画像</label><br>
 				<input name="images[]" id="images" type="file" multiple="multiple" accept="image/*"><br>
+				<!--1枚目(id="0")は大きく表示-->
 				<img class="sam" id="0"src="../img/noimage.jpg">
 				<img id="1" src="../img/noimage.jpg">
 				<img id="2" src="../img/noimage.jpg">
@@ -54,6 +56,7 @@
 							break;
 						}
 					}
+					//スマホは入力を縦長にする
 					if($mobile_ck){
 						echo '<textarea name="exp" id="exp" cols="40" rows="16"></textarea>';
 					}else{
@@ -61,6 +64,7 @@
 					}
 				?>
 				<br>
+				<!--カテゴリー　状態　配達方法　の種類はserver/const.phpで設定-->
 				<label for="genre">カテゴリー</label>
 				<select id="genre" name="genre">
 					<?php
@@ -86,11 +90,13 @@
 						}
 					?>
 				</select><br>
+				<!--一時保存　確認ボタン-->
 				<div class="cf">
 					<button type="button" onclick="save_data(); counter = 60; document.getElementById('saved').style.display = 'block';">下書き保存</button>
 					<input type="submit" value="確認画面へ">
 				</div>
 				<p>60秒ごとに自動保存されます。</p>
+				<!--保存時に5秒間表示-->
 				<p id="saved" style="display:none;">保存しました。</p>
 				</form>
 			</div>

@@ -54,6 +54,7 @@
                         }
 					    echo '<p class="ct">※評価がない場合は、平均：0/5.0　標準偏差：0　と表示されます。</p>';
 						if(mysqli_num_rows($stmt) != 0){
+							//評価表示
 							echo '<p>'.($vp * $LIMIT + 1).'～'.min(($vp + 1) * $LIMIT,mysqli_num_rows($stmt)).'件を表示　(全'.$hit.'件)</p>';
 							echo '<table border="1">';
 							echo '<tr>';

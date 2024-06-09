@@ -6,6 +6,7 @@
 	</head>
 		<body>
             <?php
+            //このページでは画面上に何も表示しない。
                 require_once('../../server/const.php');
                 require_once('../../server/stripe-php-13.10.0-beta.3/stripe-php-13.10.0-beta.3/init.php');
                 \Stripe\Stripe::setApiKey($SECRET);

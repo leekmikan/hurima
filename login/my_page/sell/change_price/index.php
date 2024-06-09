@@ -41,12 +41,14 @@
 			<div class="form">
 			<form name="myForm" method="post" action="index.php">
 				<?php
+					//値上げになる場合は、エラー
 					if($err){
 						echo '<div class="ct err">';
 						echo '<p>値上げはできません</p>';
 						echo '</div>';
 					}
 				?>
+				<!--元価格<p>　→　変更後価格<input>-->
 				<label for="pri">　価格変更(値下げのみ)</label>
 					<?php
 						echo '<p>　'.$data['price'].'円→</p>';

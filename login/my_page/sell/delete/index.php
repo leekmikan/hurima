@@ -47,6 +47,7 @@
 			<header>
 				<h1 id="title">商品削除</h1>
 			</header>
+			<!--削除確認＋商品情報表示-->
 			<div class="form">
 				<h1>本当に削除しますか？</h1>
 			<form name="myForm" method="post" action="index.php">

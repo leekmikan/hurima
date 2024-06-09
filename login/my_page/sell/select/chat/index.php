@@ -11,6 +11,7 @@
 	</head>
 		<body>
 			<?php
+				//他ページのchatディレクトリーの内容と同じ
 				session_start();
 				$bk = false;
 				$mysqli = new mysqli("localhost", "root", "", "hurima_data");

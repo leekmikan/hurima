@@ -1,4 +1,5 @@
 <?php
+//登録キャンセル
 session_start();
 if(isset($_SESSION['id'])){
     $mysqli = new mysqli("localhost", "root", "", "hurima_data");

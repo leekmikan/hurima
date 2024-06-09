@@ -4,10 +4,10 @@ function ch(x){
 	for(var i = 0;i < 5;i++){
 		if(i <= x){
 			ips[i].checked = true;
-			star[i].src = "無題3.png";
+			star[i].src = "../../../../img/star_.png";
 		}else{
 			ips[i].checked = false;
-			star[i].src = "無題2.png";
+			star[i].src = "../../../../img/star.png";
 		}
 	}
 }

@@ -39,6 +39,7 @@
 								echo '<td>メッセージ</td>';
 							echo '</tr>';
 							while($data = $stmt->fetch_array(MYSQLI_ASSOC)) {
+								//やりとりするユーザー選択
 								$stmt2 = $mysqli->query('SELECT * FROM users WHERE id = '.$data["buy_id"].' LIMIT 1;');
 								$name = $stmt2->fetch_array(MYSQLI_ASSOC);
 								echo '<tr>';
@@ -92,7 +93,6 @@
 					</tr>
 				</table>
 			</footer>
-			<script src="main.js"></script>
 		</body>
 	</head>
 </html>

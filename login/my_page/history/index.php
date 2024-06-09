@@ -25,6 +25,7 @@
 			</header>
 			<div class="main">
 					<?php
+					//履歴情報整理
 					if (isset($_SESSION['id'])) {
 						$ar = array_merge(array_unique(json_decode($data['history'])));
 						$tmp = "";
@@ -54,6 +55,7 @@
 						if(count($ar) == 0){
 							echo '<h2>閲覧した商品はありません</h2>';
 						}else{
+							//履歴表示
 							echo '<p>'.($vp * $LIMIT + 1).'～'.min(($vp + 1) * $LIMIT,mysqli_num_rows($stmt)).'件を表示　(全'.$hit.'件)</p>';
 							echo '<table border="1">';
 							echo '<tr>';

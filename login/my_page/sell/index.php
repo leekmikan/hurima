@@ -35,6 +35,7 @@
 						$i = 0;
 						$len = mysqli_num_rows($stmt);
 						if($len != 0){
+							//出品一覧表示　価格　メッセージ　削除　はページ推移可能
 							echo '<p>'.($vp * $LIMIT + 1).'～'.min(($vp + 1) * $LIMIT,mysqli_num_rows($stmt)).'件を表示　(全'.$hit.'件)</p>';
 							echo '<table border="1">';
 							echo '<tr>';

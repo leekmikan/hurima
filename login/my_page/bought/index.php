@@ -31,6 +31,7 @@
 			</header>
 			<div class="main">
 					<?php
+					//購入済み商品表示　メッセージと評価はクリックするとページ移動する
 					if (isset($_SESSION['id'])) {
 						if(mysqli_num_rows($stmt) != 0){
 							echo '<p>'.($vp * $LIMIT + 1).'～'.min(($vp + 1) * $LIMIT,mysqli_num_rows($stmt)).'件を表示　(全'.$hit.'件)</p>';
@@ -79,6 +80,7 @@
 								echo '<input type="hidden" name="detail" value="'.$data["id"].'">';
 								$stmt2 = $mysqli->query('SELECT * FROM items WHERE id = '.$data["id"].' LIMIT 1;');
 								$tmp = $stmt2->fetch_array(MYSQLI_ASSOC);
+								//評価済みならページ推移不可
 								if(is_null($tmp['judge'])){
 									if($len == 1){
 										echo '<a href="javascript:judge.submit()">未評価</a>';
