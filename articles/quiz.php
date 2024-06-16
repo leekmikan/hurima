@@ -16,14 +16,22 @@
 				session_start();
 				if (isset($_SESSION['id'])) {
 					if(isset($_POST['ans'])){
-						require_once '../server/const.php';
-						$mysqli = new mysqli("localhost", "root", "", "hurima_data");
-						if($_POST['ans'] == $QUIZ_ANS){
-							$stmt = $mysqli->query('UPDATE users SET frag = frag + 8 - 8 * ((frag >> 3) % 2) WHERE id = "'.$_SESSION['id'].'";');
-						}else{
-							$stmt = $mysqli->query('UPDATE users SET frag = frag - 8 * ((frag >> 3) % 2) WHERE id = "'.$_SESSION['id'].'";');
+						$token = isset($_POST["token"]) ? $_POST["token"] : "";
+						$session_token = isset($_SESSION["token"]) ? $_SESSION["token"] : "";
+						unset($_SESSION["token"]);
+						if($token != "" && $token == $session_token) {
+							require_once '../server/const.php';
+							$mysqli = new mysqli("localhost", "root", "", "hurima_data");
+							if($_POST['ans'] == $QUIZ_ANS){
+								$stmt = $mysqli->query('UPDATE users SET frag = frag + 8 - 8 * ((frag >> 3) % 2) WHERE id = "'.$_SESSION['id'].'";');
+							}else{
+								$stmt = $mysqli->query('UPDATE users SET frag = frag - 8 * ((frag >> 3) % 2) WHERE id = "'.$_SESSION['id'].'";');
+							}
+							echo "<script type='text/javascript'>alert('回答を更新しました。');location.href='../index.php';</script>";
 						}
-						echo "<script type='text/javascript'>alert('回答を更新しました。');location.href='../index.php';</script>";
+					}else{
+						$token = uniqid('', true);
+						$_SESSION['token'] = $token;
 					}
 				}else{
 					$_SESSION['loc'] = '../articles/quiz.php';
@@ -60,6 +68,9 @@
 					<img src="quiz.png">
 					<form id="myForm" name="myForm" method="post" action="index.php">
 						<input class="search" type="text" name="ans" placeholder="答えを入力" ><br><br>
+						<?php
+							echo '<input type="hidden" name="token" value="'.$token.'">';
+						?>
 						<input type="submit" value="答える"></input><br>
 					</form>
 				</div>

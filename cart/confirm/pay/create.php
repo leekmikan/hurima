@@ -54,7 +54,7 @@ try {
     $mysqli->query('UPDATE users SET tmp = "'.$paymentIntent['id'].'" WHERE id = "'.$_SESSION['id'].'" LIMIT 1;');
     echo '<script>var items = '.json_encode($output).';</script>';
     }else{
-        header('Location:../../index.php');
+        header('Location:../../../index.php');
     }
 } catch (Error $e) {
     http_response_code(500);

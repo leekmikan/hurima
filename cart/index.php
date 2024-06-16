@@ -13,6 +13,8 @@
 			<?php
 			session_start();
 				if (isset($_SESSION['id'])) {
+					$token = uniqid('', true);
+					$_SESSION['token'] = $token;
 					$mysqli = new mysqli("localhost", "root", "", "hurima_data");
 					$stmt = $mysqli->query('SELECT * FROM users WHERE id = "'.$_SESSION['id'].'" LIMIT 1;');
 					$data = $stmt->fetch_array(MYSQLI_ASSOC);
@@ -100,6 +102,7 @@
 									echo '<input type="number" name="points" id="points" value="0" min="0" max="'.$max_p.'">';
 									echo '<p>'.$max_p.'Pまで使えます</p>';
 								}
+								echo '<input type="hidden" name="token" value="'.$token.'">';
 								echo '<input type="submit" value="購入する(確認画面へ)">';
 								echo '</div>';
 							}							

@@ -14,27 +14,36 @@
 			session_start();
 			$mysqli = new mysqli("localhost", "root", "", "hurima_data");
 				if (isset($_SESSION['id'])) {
-					if (isset($_POST['cancel'])){
+					$token = isset($_POST["token"]) ? $_POST["token"] : "";
+					$session_token = isset($_SESSION["token"]) ? $_SESSION["token"] : "";
+					unset($_SESSION["token"]);
+					if($token != "" && $token == $session_token) {
+						$token = uniqid('', true);
+						$_SESSION['token'] = $token;
+						if (isset($_POST['cancel'])){
+							$stmt = $mysqli->query('SELECT * FROM users WHERE id = "'.$_SESSION['id'].'" LIMIT 1;');
+							$data = $stmt->fetch_array(MYSQLI_ASSOC);
+							$ar = json_decode($data['cart']);
+							$ar = array_diff($ar, $_POST['cancel']);
+							$ar = array_values($ar);
+							$tmp = "";
+							$len = count($ar);
+							for($i = 0;$i < $len;$i++){
+								$tmp .= '"'.$ar[$i].'"';
+								if($i + 1 < $len){
+									$tmp .= ",";
+								}
+							}
+							$mysqli->query('UPDATE users SET cart = JSON_REMOVE(cart, "$") WHERE id = "'.$_SESSION['id'].'" LIMIT 1;');
+							$mysqli->query('UPDATE users SET cart = JSON_ARRAY('.$tmp.') WHERE id = "'.$_SESSION['id'].'" LIMIT 1;');
+						}
 						$stmt = $mysqli->query('SELECT * FROM users WHERE id = "'.$_SESSION['id'].'" LIMIT 1;');
 						$data = $stmt->fetch_array(MYSQLI_ASSOC);
-						$ar = json_decode($data['cart']);
-						$ar = array_diff($ar, $_POST['cancel']);
-						$ar = array_values($ar);
-						$tmp = "";
-						$len = count($ar);
-						for($i = 0;$i < $len;$i++){
-							$tmp .= '"'.$ar[$i].'"';
-							if($i + 1 < $len){
-								$tmp .= ",";
-							}
+						if(isset($_SESSION['points'])){
+							$mysqli->query('UPDATE users SET points = '.(intval($_SESSION['points']) + intval($data['points'])).' WHERE id = "'.$_SESSION['id'].'" LIMIT 1;');
 						}
-						$mysqli->query('UPDATE users SET cart = JSON_REMOVE(cart, "$") WHERE id = "'.$_SESSION['id'].'" LIMIT 1;');
-						$mysqli->query('UPDATE users SET cart = JSON_ARRAY('.$tmp.') WHERE id = "'.$_SESSION['id'].'" LIMIT 1;');
-					}
-					$stmt = $mysqli->query('SELECT * FROM users WHERE id = "'.$_SESSION['id'].'" LIMIT 1;');
-					$data = $stmt->fetch_array(MYSQLI_ASSOC);
-					if(isset($_SESSION['points'])){
-						$mysqli->query('UPDATE users SET points = '.(intval($_SESSION['points']) + intval($data['points'])).' WHERE id = "'.$_SESSION['id'].'" LIMIT 1;');
+					}else{
+						header('Location:../../index.php');exit;
 					}
 				}else{
 					header('Location:../login/index.php');exit;
@@ -93,6 +102,7 @@
 								echo '<p>消費ポイント:　'.$_POST['points'].'P</p>';
 								echo '<input type="hidden" name="points" value="'.$_POST['points'].'">';
 								echo '<p>上記の商品を本当に購入してよろしいでしょうか。</p>';
+								echo '<input type="hidden" name="token" value="'.$token.'">';
 								echo '<input type="submit" value="購入する">';
 								echo '</div>';
 							}

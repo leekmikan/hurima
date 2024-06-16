@@ -14,7 +14,14 @@
 		<?php
 			session_start();
 				if (isset($_SESSION['id'])) {
-
+					$token = isset($_POST["token"]) ? $_POST["token"] : "";
+					$session_token = isset($_SESSION["token"]) ? $_SESSION["token"] : "";
+					unset($_SESSION["token"]);
+					if($token != "" && $token == $session_token) {
+						
+					}else{
+						header('Location:../index.php');exit;
+					}
 				}else{
 					header('Location:../../login/index.php');exit;
 				}

@@ -29,11 +29,18 @@
 						if($data['frag'] % 2 == 1){
 							echo '<div class="ct"><p style="color: red;">このアカウントは凍結されています。</p></div>';
 						}else{
-							$_SESSION['id'] = $data['id'];
-							if(isset($_SESSION['loc'])){
-								header('Location:'.$_SESSION['loc']); exit;
+							$token = isset($_POST["token"]) ? $_POST["token"] : "";
+							$session_token = isset($_SESSION["token"]) ? $_SESSION["token"] : "";
+							unset($_SESSION["token"]);
+							if($token != "" && $token == $session_token) {
+								$_SESSION['id'] = $data['id'];
+								if(isset($_SESSION['loc'])){
+									header('Location:'.$_SESSION['loc']); exit;
+								}else{
+									header('Location:my_page/index.php'); exit;
+								}
 							}else{
-								header('Location:my_page/index.php'); exit;
+								header('Location:../index.php'); exit;
 							}
 						}
 					}else{
@@ -53,6 +60,9 @@
 					echo '<label for="password">パスワード　　</label>';
 					echo '<input type="password" name="password" placeholder="パスワードを入力" ><br>';
 					echo '<div class="div_button">';
+					$token = uniqid('', true);
+					$_SESSION['token'] = $token;
+					echo '<input type="hidden" name="token" value="'.$token.'">';
 						echo '<input type="submit" value="ログイン"></input><br>';
 						echo '<button  type="button" onclick="location.href=\'new/index.php\'">新規会員登録</button>';
 						echo '<p><a href="forget_pass/index.php">パスワードを忘れた方はこちら</a></p>';

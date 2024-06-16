@@ -88,6 +88,7 @@
 						for($i = 0;$i < count($HSEND);$i++){
 							echo '<option value="'.$i.'">'.$HSEND[$i].'</option>';
 						}
+						echo '<input type="hidden" name="token" value="'.$token.'">';
 					?>
 				</select><br>
 				<!--一時保存　確認ボタン-->
