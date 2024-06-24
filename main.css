@@ -9,11 +9,25 @@ button{
     background: #00A0FF;
     height: 35px;
     text-align: center;
+    color: #FFF;
+    border: none;
+}
+button:hover{
+    background: #004080;
 }
 
 /*全体的な送信ボタン*/
 input[type="submit"]{
-    background: #00A0FF;
+    margin: 0;
+    background: #0cd73f;
+    height: 24px;
+    text-align: center;
+    color: #FFF;
+    border: none;
+    border-radius: 10px;
+}
+input[type="submit"]:hover{
+    background: #098728;
 }
 
 /*中央寄せ用*/
@@ -28,7 +42,7 @@ input[type="submit"]{
 
 /*ヘッダー関係*/
 header{ 
-    background: #FFFFFF;
+    background: linear-gradient(to bottom, #FFF, #DDDDDD);
 }
 
 /*ロゴのサイズ*/
@@ -39,24 +53,31 @@ header{
 /*検索欄*/
 .search{
     width: 30%;
-    font-size: 18px;
+    font-size: 17px;
     margin: 0px;
 }
 
 /*ヘッダー内ボタン*/
 header button{
     padding: 0 20px;
-    margin: 10px 2.8vw;
+    margin: 10px 4%;
 }
 
 /*検索ボタン*/
 #sb{
     margin: 0;
+    background: #0cd73f;
+    height: 24px;
+    text-align: center;
+    color: #FFF;
+    border: none;
 }
-
+#sb:hover{
+    background: #098728;
+}
 /*フッター関係*/
 footer{ 
-    background: #FFFFFF;
+    background: linear-gradient(to top, #FFF, #DDDDDD);
 }
 /*利用規約などのテーブル*/
 footer table{
@@ -102,7 +123,7 @@ ul {
 }
 ul li {
     display: inline-block;
-    padding: 5px 20px 5px 20px;
+    padding: 5px 75px 5px 20px; /*カテゴリー増やしたら2つめを小さくする*/
 }
 header .tab{
     z-index: 10;
@@ -159,7 +180,8 @@ header .tab{
     height: 30%;
     overflow-wrap: break-word;
     display: inline-block;
-    background-color: #808080;
+    border: solid 2px #000;
+    background-color: #3367ff;
 }
 /*ニュースアイコン*/
 .article img{

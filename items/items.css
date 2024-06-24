@@ -11,7 +11,8 @@
 /*商品一覧用テーブル*/
 .items td{
     margin:auto;
-    background: white;
+    background: rgba(255, 255, 255, 0.978);
+    border: solid 2px #000;
 }
 
 /*商品画像(クリック可)*/

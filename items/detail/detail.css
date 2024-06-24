@@ -11,34 +11,32 @@
 /*商品サムネイル*/
 .pic{
     object-fit: cover;
-    width: 40vw;
-    height: 40vw;
+    width: 90%;
 }
 
 /*商品画像(サムネイル以外)*/
 .sel{
     object-fit: cover;
-    width: 10vw;
-    height: 10vw;
+    width: 22.5%;
 }
 
 /*出品者情報(左下)*/
 .info{
-    width: 45vw;
-    height: 45vh;
+    width: 90%;
+    height: 20%;
     background: white;
 }
 
 /*商品情報(右)*/
 .big_info{
-    width: 45vw;
-    height: 140vh;
+    width: 90%;
+    height: 68%;
     background: white;
 }
 
 /*確認、通報、カートボタン*/
 .cB_button{
-    width: 45vw;
+    width: 80%;
 }
 
 /*以下スマホ用*/
@@ -54,12 +52,12 @@
     }
     .info{
         width: 45vw;
-        height: 140vh;
+        height: 130vh;
         background: white;
     }
     .big_info{
         width: 45vw;
-        height: 150vh;
+        height: 140vh;
         background: white;
     }
     .contentB form input{
