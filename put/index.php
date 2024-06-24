@@ -74,7 +74,7 @@
 						}
 					?>
 				</select><br>
-				<label for="stat">状態</label>
+				<label for="stat">状態　　　</label>
 				<select id="stat" name="stat">
 					<?php
 						for($i = 0;$i < count($STAT);$i++){
@@ -82,13 +82,12 @@
 						}
 					?>
 				</select><br>
-				<label for="send">配送方法</label>
+				<label for="send">配送方法　</label>
 				<select id="send" name="send">
 					<?php
 						for($i = 0;$i < count($HSEND);$i++){
 							echo '<option value="'.$i.'">'.$HSEND[$i].'</option>';
 						}
-						echo '<input type="hidden" name="token" value="'.$token.'">';
 					?>
 				</select><br>
 				<!--一時保存　確認ボタン-->

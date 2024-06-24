@@ -40,9 +40,8 @@
                             $dist[intval($judge['judge']) - 1]++;
                             $avr += intval($judge['judge']);
                         }
-                        if($hit != 0){
-                            $avr = round($avr / $hit * 10) / 10.0;
-                        }
+						$hit = ($hit == 0) ? 1 : $hit;
+                        $avr = round($avr / $hit * 10) / 10.0;
                         for($i = 0;$i < count($dist);$i++){
                             $sd += $dist[$i] * pow($i + 1 - $avr,2);
                         }
@@ -87,7 +86,7 @@
 							}
 							echo '</table>';
 						}else{
-							echo '<h2>購入済みの商品はありません</h2>';
+							echo '<h2>購入された商品はありません</h2>';
 						}
 					}
 					echo '<form id="pgForm" name="pgForm" method="get" action="index.php">';
