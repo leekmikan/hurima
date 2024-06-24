@@ -123,7 +123,7 @@ ul {
 }
 ul li {
     display: inline-block;
-    padding: 5px 75px 5px 20px; /*カテゴリー増やしたら2つめを小さくする*/
+    padding: 5px 30px 5px 30px; 
 }
 header .tab{
     z-index: 10;
@@ -233,7 +233,7 @@ header .tab{
     
     header .tab{
         z-index: 10;
-        height: 32px;
+        height: 96px;
         background-color: #AAA;
         width: 100%;
         z-index: 2;
