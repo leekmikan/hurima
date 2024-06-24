@@ -42,7 +42,7 @@ input[type="submit"]:hover{
 
 /*ヘッダー関係*/
 header{ 
-    background: linear-gradient(to bottom, #FFF, #DDDDDD);
+    background: linear-gradient(to bottom, #FFF, #CCC);
 }
 
 /*ロゴのサイズ*/
@@ -77,7 +77,7 @@ header button{
 }
 /*フッター関係*/
 footer{ 
-    background: linear-gradient(to top, #FFF, #DDDDDD);
+    background: linear-gradient(to bottom, #CCC, #FFF);
 }
 /*利用規約などのテーブル*/
 footer table{
