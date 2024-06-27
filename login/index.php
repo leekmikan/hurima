@@ -50,7 +50,7 @@
 			?>
 			<br>
 			<div class="ct"><h1 id="title">ログイン</h1></div>
-			<div class="form">
+			<div class="form"><br>
 			<form name="myForm" method="post" action="index.php">
 				<?php
 				//パスワード入力欄
