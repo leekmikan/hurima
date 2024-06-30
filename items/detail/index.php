@@ -40,20 +40,7 @@
 				<?php
 				$mysqli = new mysqli("localhost", "root", "", "hurima_data");
 				session_start();
-				if (isset($_GET['cart'])) {
-					if(!isset($_SESSION['id'])){
-						$_SESSION['loc'] = "../cart/index.php";
-						echo '<input type="hidden" name="cart" value="'.$_GET['cart'].'">';
-						header('Location:../login/index.php');exit;
-					}else{
-						$stmt = $mysqli->query('SELECT * FROM items WHERE id = "'.$_GET['cart'].'" LIMIT 1;');
-						if(mysqli_num_rows($stmt) != 0){
-							$mysqli->query('UPDATE users SET cart = IFNULL(json_array_append(cart, "$", "'.$_GET['cart'].'"), json_array("'.$_GET['cart'].'")) WHERE id = "'.$_SESSION['id'].'" LIMIT 1;');
-						}
-						header('Location:../index.php');exit;
-					}
-				}
-				else if (isset($_GET['detail'])) {
+				if (isset($_GET['detail'])) {
 					$stmt = $mysqli->query('SELECT * FROM items WHERE id = "'.$_GET['detail'].'" LIMIT 1;');
 					$data = $stmt->fetch_array(MYSQLI_ASSOC);
 					$stmt2 = $mysqli->query('SELECT * FROM users WHERE id = "'.$data['user_id'].'" LIMIT 1;');
@@ -124,12 +111,24 @@
 						$array = json_decode($user_data['cart']);
 						if(!is_null($array)){
 							if(!in_array($_GET['detail'], $array)){
-								echo '<form name="myForm" method="get" action="index.php">';
+								$token = uniqid('', true);
+								$_SESSION['token'] = $token;
+								echo '<form name="myForm" method="post" action="reg.php">';
+								echo '<input type="hidden" name="token" value="'.$token.'">';
 								echo '<input class="cB_button" type="submit" value="カートに入れる">';
 								echo '<input type="hidden" name="cart" value="'.$_GET['detail'].'">';
 								echo '</form>';
 							}
 						}
+					}else if(!isset($_SESSION['id'])){
+						$token = uniqid('', true);
+						$_SESSION['token'] = $token;
+						$_SESSION['loc'] = $_SERVER['REQUEST_URI'];
+						echo '<form name="myForm" method="post" action="reg.php">';
+						echo '<input type="hidden" name="token" value="'.$token.'">';
+						echo '<input class="cB_button" type="submit" value="カートに入れる(要ログイン)">';
+						echo '<input type="hidden" name="cart" value="'.$_GET['detail'].'">';
+						echo '</form>';
 					}
 					?>
 					<br>

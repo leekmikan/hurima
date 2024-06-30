@@ -55,6 +55,9 @@
 				<?php
 				//パスワード入力欄
 				if(!isset($_SESSION['id'])){
+					if(isset($_POST['loc'])){
+						$_SESSION['loc'] = $_POST['loc'];
+					}
 					echo '<label for="email">メールアドレス</label>';
 					echo '<input type="email" name="email" placeholder="メールアドレスを入力" ><br>';
 					echo '<label for="password">パスワード　　</label>';
@@ -69,9 +72,6 @@
 					echo '</div>';
 				}else{
 					header('Location:my_page/index.php'); exit;
-				}
-				if(isset($_POST['cart'])){
-					echo '<input type="hidden" name="cart" value="'.$_POST['cart'].'">';
 				}
 				?>
 			</form>
