@@ -15,7 +15,8 @@
 			<?php
 			session_start();
 				if (isset($_SESSION['id'])) {
-
+					$token = uniqid('', true);
+					$_SESSION['token'] = $token;					
 				}else{
 					$_SESSION['loc'] = "../put/index.php";
 					header('Location:../login/index.php'); exit;
@@ -88,6 +89,7 @@
 						for($i = 0;$i < count($HSEND);$i++){
 							echo '<option value="'.$i.'">'.$HSEND[$i].'</option>';
 						}
+						echo '<input type="hidden" name="token" value="'.$token.'">';
 					?>
 				</select><br>
 				<!--一時保存　確認ボタン-->

@@ -24,9 +24,10 @@
                     if(!isset($_SESSION['id'])){
                         header('Location:../../login/index.php');exit;
                     }else{
+						$mysqli = new mysqli("localhost", "root", "", "hurima_data");
                         $stmt = $mysqli->query('SELECT * FROM items WHERE id = "'.$_POST['cart'].'" LIMIT 1;');
                         if(mysqli_num_rows($stmt) != 0){
-                            $mysqli->query('UPDATE users SET cart = IFNULL(json_array_append(cart, "$", "'.$_POST['cart'].'"), json_array("'.$_GET['cart'].'")) WHERE id = "'.$_SESSION['id'].'" LIMIT 1;');
+                            $mysqli->query('UPDATE users SET cart = IFNULL(json_array_append(cart, "$", "'.$_POST['cart'].'"), json_array("'.$_POST['cart'].'")) WHERE id = "'.$_SESSION['id'].'" LIMIT 1;');
                         }
                     }
                 }
