@@ -10,5 +10,5 @@ $LIMIT = 100;
 $SUPPORT_LIMIT = 5; //支援者定員.
 $STRIPE_API = 'stripe-php-13.10.0-beta.3/stripe-php-13.10.0-beta.3/init.php';
 $ACCOUNT_ID = 'acct_1PAkRdBl4em3MIGo'; //StripeアカウントID.
-$QUIZ_ANS = '焼肉定食'; //クイズの答え.
+$QUIZ_ANS = '2024/4096575'; //クイズの答え.
 ?>

@@ -64,9 +64,12 @@
 			</header>
 				<div class="main ct">
 					<h1>クイズ</h1>
-					<p>ジャンルは高校までの科目、一般常識、ひらめき問題、推測問題、検索問題など<br>正解した人の中から抽選で1名様に1000Pプレゼント<br>問題は月初めに更新</p>
+					<p>ジャンルは高校までの科目、一般常識、ひらめき問題、推測問題、検索問題など</p>
+					<p>正解した人の中から抽選で1名様に1000Pプレゼント</p>
+					<p>期限：月末</p>
+					<h2>今回の問題の難易度：★★★(MAX)</h2>
 					<img src="quiz.png">
-					<form id="myForm" name="myForm" method="post" action="index.php">
+					<form id="myForm" name="myForm" method="post" action="quiz.php">
 						<input class="search" type="text" name="ans" placeholder="答えを入力" ><br><br>
 						<?php
 							echo '<input type="hidden" name="token" value="'.$token.'">';
