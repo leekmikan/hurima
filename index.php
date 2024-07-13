@@ -99,15 +99,15 @@
 					<tr>
 						<td>
 							<h2>会社概要</h2>
-							<p>ああああ</p>
+							<p><a href="">こちら</a></p>
 						</td>
 						<td>
 							<h2>利用ガイドライン</h2>
-							<p>ああああ</p>
+							<p><a href="readme/guideline.php">こちら</a></p>
 						</td>
 						<td>
 							<h2>利用規約</h2>
-							<p>ああああ</p>
+							<p><a href="readme/kiyaku.php">こちら</a></p>
 						</td>
 						<td>
 							<button>リンク1</button><br>
