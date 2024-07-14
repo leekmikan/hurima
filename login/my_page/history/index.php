@@ -80,6 +80,7 @@
 									}else{
 										echo '<a href="javascript:myForm['.$i.'].submit()">'.$data['item_name'].'</a>';
 									}
+									echo '</form>';
 									echo '</td>';
 									if($data['src0'] == "0"){
 										echo '<td><img class="item_img" src="test.jpg"</img></td>';
