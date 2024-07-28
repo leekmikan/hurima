@@ -11,7 +11,6 @@
 	<link rel="stylesheet" href="../../../../login/new/new.css">
 	<link rel="stylesheet" href="change.css">
 	<script src="https://ajaxzip3.github.io/ajaxzip3.js" charset="UTF-8"></script>
-	<script src="main.js"></script>
 	</head>
 		<body>
 			<?php
@@ -70,13 +69,13 @@
 			<div class="contentB">
 			<p>コメント</p>
 				<?php
-					echo '<textarea id="msg" name="msg" cols="50" rows="10" placeholder="400字以内" maxlength="400" value="'.$data['msg'].'"></textarea><br>'
+					echo '<textarea id="msg" name="msg" cols="40" rows="4" placeholder="160字以内" maxlength="160" value="'.$data['msg'].'"></textarea><br>'
 				?>
 			</div>
-			</div>
+			</div><br>
 			<div class="div_button">
 				<input type="submit" value="確認画面へ">
-			</div>
+			</div><br><br>
 			</form>
 			<footer>
 				<table>
@@ -101,5 +100,6 @@
 				</table>
 			</footer>
 		</body>
+		<script src="main.js"></script>
 	</head>
 </html>

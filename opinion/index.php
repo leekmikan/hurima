@@ -13,13 +13,21 @@
 			<?php
 				session_start();
 				if (isset($_POST['msg'])) {
-					$mysqli = new mysqli("localhost", "root", "", "hurima_data");
-					if(isset($_SESSION['id'])){
-						$mysqli->query('INSERT INTO opinion (user_id, opinion, tm) VALUES ("'.$_SESSION['id'].'","'.$_POST['msg'].'","'.date("Y-m-d H:i:s").'")');
-					}else{
-						$mysqli->query('INSERT INTO opinion (user_id, opinion, tm) VALUES (NULL,"'.$_POST['msg'].'","'.date("Y-m-d H:i:s").'")');
+					$token = isset($_POST["token"]) ? $_POST["token"] : "";
+					$session_token = isset($_SESSION["token"]) ? $_SESSION["token"] : "";
+					unset($_SESSION["token"]);
+					if($token != "" && $token == $session_token) {
+						$mysqli = new mysqli("localhost", "root", "", "hurima_data");
+						if(isset($_SESSION['id'])){
+							$mysqli->query('INSERT INTO opinion (user_id, opinion, tm) VALUES ("'.$_SESSION['id'].'","'.$_POST['msg'].'","'.date("Y-m-d H:i:s").'")');
+						}else{
+							$mysqli->query('INSERT INTO opinion (user_id, opinion, tm) VALUES (NULL,"'.$_POST['msg'].'","'.date("Y-m-d H:i:s").'")');
+						}
 					}
 					header('Location:../index.php');exit;
+				}else{
+					$token = uniqid('', true);
+					$_SESSION['token'] = $token;
 				}
 			?>
 			<header>
@@ -73,10 +81,13 @@
 					</tr>
 				</table>
 				<!-- 意見入力フォーム-->
-				<p>半角400字以内</p>
+				<p>400字以内</p>
 				<div class="msg">
 					<form name="myForm" method="post" action="index.php">
-						<textarea name="msg" cols="40" rows="8"></textarea><br>
+						<?php
+							echo '<input type="hidden" name="token" value="'.$token.'">';
+						?>
+						<textarea name="msg" cols="40" rows="10"></textarea><br>
 						<input type="submit" value="送信">
 					</form>
 				</div>

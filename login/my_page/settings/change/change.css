@@ -1,12 +1,37 @@
 /*二段組*/
 .contentA,.contentB{
-    width: 50vw;
+    width: 50%;
+    height: 80%;
+    margin-left: 2%;
 }
 .main{
     display: flex;
+    height: 100%;
 }
 
 /*説明*/
 textarea{
     resize: none;
+}
+@media only screen and (max-width: 979px) {
+    header{
+        width: 250%;
+    }
+    footer{
+        text-align: center;
+        width: 250%;
+    }
+    .div_button{
+        width: 250%;
+    }
+    .main{
+        width: 250%;
+    }
+    .contentA,.contentB{
+        width: 135%;
+        height: 200%;
+    }
+    footer table{
+        width: 95%;
+    }
 }
