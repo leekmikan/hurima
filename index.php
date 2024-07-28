@@ -13,7 +13,6 @@
 			<header>
 				<a href="index.php"><img class="logo" src="img/logo.jpg"></a>
 					<form id="myForm" name="myForm" method="get" action="items/index.php">
-						<a>　　</a>
 						<input class="search" type="search" id="site-search" name="key_word">
 						<input type="submit" id="sb" value="検索">
 						<button type="button" onclick="location.href='put/index.php'">出品</button>
