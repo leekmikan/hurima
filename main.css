@@ -40,7 +40,7 @@ input[type="submit"]:hover{
 
 /*中身なくても十分な高さをとる用*/
 .main{
-    height: 80vw;
+    min-height: 100%;
 }
 
 /*ヘッダー関係*/
@@ -195,7 +195,20 @@ header .tab{
 .article img{
     width: 50%;
 }
-
+.bn{
+    margin: 15px auto;
+    width: 80%;
+}
+.bn img{
+    width: 60%;
+    padding: 0;
+}
+.bn button{
+    height: 100px;
+}
+.bn table{
+    width: 100%;
+}
 /*以下スマホ用*/
 @media only screen and (max-width: 979px) {
     .search{

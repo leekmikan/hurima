@@ -36,6 +36,15 @@
 			</header>
 			<p>1.0.0α</p>
 				<div class="main ct">
+					<div class="ct bn">
+						<table>
+							<tr>
+								<td><button onclick="b_change(-1)">◀</button></td>
+								<td><a href="#" id="bn"><img src="img/b1.jpg" id="bn_img" ></a></td>
+								<td><button onclick="b_change(1)">▶</button></td>
+							</tr>
+						</table>
+					</div>
 					<div class="article">
 					<br>
 					<a href="articles/quiz.php"><img src="img/quiz.jpg" ></a>
@@ -116,5 +125,6 @@
 				</table>
 			</footer>
 		</body>
+		<script src="bn.js"></script>
 	</head>
 </html>
