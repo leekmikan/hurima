@@ -7,6 +7,7 @@
 	<link rel="icon" type="image/jpg" href="img/icon.jpg">
 	<link rel="apple-touch-icon" sizes="180x180" href="img/icon.jpg">
 	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="items/items.css">
 	<script src="main.js"></script>
 	</head>
 		<body>
@@ -64,6 +65,37 @@
 							echo '<p><a href="'.$url.'">'.$row['user_name'].'</a></p>';
 						}
 						?>
+					<h2>注目の商品</h2>
+						<table class="items">
+						<?php
+							$stmt = $mysqli->query('SELECT * FROM items ORDER BY click LIMIT 10;');
+							while($row = $stmt->fetch_array(MYSQLI_ASSOC)) {
+								if($i % 5 == 0){
+									echo '<tr>';
+								}
+								echo '<td>';
+								echo '<form name="myForm" method="get" action="detail/index.php">';
+								echo '<input type="hidden" name="detail" value="'.$row['id'].'">';
+								if($row['src0'] == "0"){
+									echo '<input type="image" class="item_img" src="img/noimage.jpg">';
+								}else{
+									$img = file_get_contents('user_img/'.$row['src0'].'.dat');
+									echo '<input type="image" class="item_img" src="'.$img.'">';
+								}
+								echo '<p>'.$row['item_name'].'</p>';
+								echo '<p><span name="price">'.$row['price'].'</span>円</p>';
+								echo '</form>';
+								echo '</td>';
+								if($i % 5 == 4){
+									echo '</tr>';
+								}
+								$i++;
+							}
+							if(($i - 1) % 5 != 4){
+								echo '</tr>';
+							}
+						?>
+						</table>
 					<h2>評価の高い人(上位<?php echo $SUPPORT_LIMIT ?>名)</h2>
 						<?php
 						$stmt = $mysqli->query('SELECT * FROM items WHERE judge IS NOT NULL');

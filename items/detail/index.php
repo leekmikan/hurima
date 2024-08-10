@@ -45,6 +45,7 @@
 					$data = $stmt->fetch_array(MYSQLI_ASSOC);
 					$stmt2 = $mysqli->query('SELECT * FROM users WHERE id = "'.$data['user_id'].'" LIMIT 1;');
 					$user_data = $stmt2->fetch_array(MYSQLI_ASSOC);
+					$mysqli->query('UPDATE items SET click = click + 1 WHERE id = "'.$_GET['detail'].'" LIMIT 1;');
 					//データベースのfragの下位1ビットから凍結判定
 					if($user_data['frag'] % 2 == 1){
 						echo '<div class="ct"><p style="color: red;">凍結されているアカウントの商品です。</p></div>';
