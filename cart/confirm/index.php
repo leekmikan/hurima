@@ -50,9 +50,19 @@
 				}
 			?>
 			<div class="main">
-			<form name="myForm" method="post" action="pay/index.php">
 				<br>
 				<?php
+				$sell_money = false;
+				if(!is_null($_POST['sell_money'])){
+					if($_POST['sell_money'] == 1){
+						$sell_money = true;
+					}
+				}
+				if($sell_money){
+					echo '<form name="myForm" method="post" action="pay2/index.php">';
+				}else{
+					echo '<form name="myForm" method="post" action="pay/index.php">';
+				}
 				//カート表示 なければ前のページに戻る
 				if (isset($_SESSION['id'])) {
 						$ar = json_decode($data['cart']);
@@ -99,8 +109,12 @@
 							}else{
 								echo '<div>';
 								echo '<h1>合計金額　<span id="sum">0</span>円</h1>';
-								echo '<p>消費ポイント:　'.$_POST['points'].'P</p>';
-								echo '<input type="hidden" name="points" value="'.$_POST['points'].'">';
+								if($sell_money){
+									echo '<p>売上から支払い</p>';
+								}else{
+									echo '<p>消費ポイント:　'.$_POST['points'].'P</p>';
+									echo '<input type="hidden" name="points" value="'.$_POST['points'].'">';
+								}
 								echo '<p>上記の商品を本当に購入してよろしいでしょうか。</p>';
 								echo '<input type="hidden" name="token" value="'.$token.'">';
 								echo '<input type="submit" value="購入する">';

@@ -101,6 +101,14 @@
 									$max_p = min(intval($data['points']),$sum);
 									echo '<input type="number" name="points" id="points" value="0" min="0" max="'.$max_p.'">';
 									echo '<p>'.$max_p.'Pまで使えます</p>';
+									if(!is_null($data['s_id'])){
+										$balance = $stripe->balance->retrieve([], ['stripe_account' => $data['s_id']]);
+										$amount = $balance['available']['amount'];
+										if($amount >= $sum){
+											echo '<input type="checkbox" name="sell_money" value="1">売上金から支払い(残高：<span name="price">'.$amount.'</span>円)';
+											echo '※ポイントの併用不可';
+										}
+									}
 								}
 								echo '<input type="hidden" name="token" value="'.$token.'">';
 								echo '<input type="submit" value="購入する(確認画面へ)">';
