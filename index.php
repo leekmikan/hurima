@@ -74,7 +74,7 @@
 									echo '<tr>';
 								}
 								echo '<td>';
-								echo '<form name="myForm" method="get" action="detail/index.php">';
+								echo '<form name="myForm" method="get" action="items/detail/index.php">';
 								echo '<input type="hidden" name="detail" value="'.$row['id'].'">';
 								if($row['src0'] == "0"){
 									echo '<input type="image" class="item_img" src="img/noimage.jpg">';
@@ -139,7 +139,7 @@
 					<tr>
 						<td>
 							<h2>会社概要</h2>
-							<p><a href="">こちら</a></p>
+							<p><?php require_once 'server/const.php';echo '<a href='.$GAIYOU_URL.'>こちら</a>'?></p>
 						</td>
 						<td>
 							<h2>利用ガイドライン</h2>

@@ -164,7 +164,7 @@
 					<tr>
 						<td>
 							<h2>会社概要</h2>
-							<p>ああああ</p>
+							<p><p><?php require_once '../../server/const.php';echo '<a href='.$GAIYOU_URL.'>こちら</a>'?></p></p>
 						</td>
 						<td>
 							<h2>利用ガイドライン</h2>
