@@ -135,26 +135,7 @@
 						?>
 				</div>
 			<footer>
-				<table>
-					<tr>
-						<td>
-							<h2>会社概要</h2>
-							<p><?php require_once 'server/const.php';echo '<a href='.$GAIYOU_URL.'>こちら</a>'?></p>
-						</td>
-						<td>
-							<h2>利用ガイドライン</h2>
-							<p><a href="readme/guideline.php">こちら</a></p>
-						</td>
-						<td>
-							<h2>利用規約</h2>
-							<p><a href="readme/kiyaku.php">こちら</a></p>
-						</td>
-						<td>
-							<button>リンク1</button><br>
-							<button>リンク2</button>
-						</td>
-					</tr>
-				</table>
+				<?php require_once 'server/init.php'; Footer();?>
 			</footer>
 		</body>
 		<script src="bn.js"></script>

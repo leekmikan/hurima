@@ -12,7 +12,7 @@
 		<body>
 			<?php
 			session_start();
-				if (isset($_SESSION['id']) && isset($_GET['id'])) {
+				if (isset($_GET['id'])) {
 					$mysqli = new mysqli("localhost", "root", "", "hurima_data");
 					$stmt = $mysqli->query('SELECT * FROM users WHERE id = "'.$_GET['id'].'" LIMIT 1;');
 					$data = $stmt->fetch_array(MYSQLI_ASSOC);
@@ -40,26 +40,7 @@
 			?>
 			</div>
 			<footer>
-				<table>
-					<tr>
-						<td>
-							<h2>会社概要</h2>
-							<p>ああああ</p>
-						</td>
-						<td>
-							<h2>利用ガイドライン</h2>
-							<p>ああああ</p>
-						</td>
-						<td>
-							<h2>利用規約</h2>
-							<p>ああああ</p>
-						</td>
-						<td>
-							<button>リンク1</button><br>
-							<button>リンク2</button>
-						</td>
-					</tr>
-				</table>
+				<?php require_once '../../../server/init.php'; Footer();?>
 			</footer>
 		</body>
 	</head>

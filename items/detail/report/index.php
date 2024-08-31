@@ -2,17 +2,17 @@
 <html lang="ja">
 	<head>
 	<meta charset="uft-8">
-	<title>トップ</title>
+	<title>通報</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="icon" type="image/jpg" href="img/icon.jpg">
-	<link rel="apple-touch-icon" sizes="180x180" href="img/icon.jpg">
+	<link rel="icon" type="image/jpg" href="../../../img/icon.jpg">
+	<link rel="apple-touch-icon" sizes="180x180" href="../../../img/icon.jpg">
 	<link rel="stylesheet" href="../../../main.css">
 	<link rel="stylesheet" href="../chat/chat.css">
 	<script src="main.js"></script>
 	</head>
 		<body>
 			<header>
-				<a href="index.php"><img class="logo" src="img/logo.jpg"></a>
+				<a href="index.php"><img class="logo" src="../../../img/logo.jpg"></a>
 					<form id="myForm" name="myForm" method="get" action="items/index.php">
 						<a>　　</a>
 						<input class="search" type="search" id="site-search" name="key_word">
@@ -62,26 +62,7 @@
 			</form>
 				</div>
 			<footer>
-				<table>
-					<tr>
-						<td>
-							<h2>会社概要</h2>
-							<p>ああああ</p>
-						</td>
-						<td>
-							<h2>利用ガイドライン</h2>
-							<p>ああああ</p>
-						</td>
-						<td>
-							<h2>利用規約</h2>
-							<p>ああああ</p>
-						</td>
-						<td>
-							<button>リンク1</button><br>
-							<button>リンク2</button>
-						</td>
-					</tr>
-				</table>
+				<?php require_once '../../../server/init.php'; Footer();?>
 			</footer>
 		</body>
 	</head>

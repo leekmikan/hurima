@@ -66,27 +66,8 @@
 						<td><button onclick="location.href='judges/index.php'">自分の評価</button></td>
 					</tr>
 				</table>
-			<footer>
-				<table>
-					<tr>
-						<td>
-							<h2>会社概要</h2>
-							<p>ああああ</p>
-						</td>
-						<td>
-							<h2>利用ガイドライン</h2>
-							<p>ああああ</p>
-						</td>
-						<td>
-							<h2>利用規約</h2>
-							<p>ああああ</p>
-						</td>
-						<td>
-							<button>リンク1</button><br>
-							<button>リンク2</button>
-						</td>
-					</tr>
-				</table>
+				<footer>
+				<?php require_once '../../server/init.php'; Footer();?>
 			</footer>
 		</body>
 		<script src="../../main.js"></script>

@@ -113,26 +113,7 @@
 					?>
 			</div>
 			<footer>
-				<table>
-					<tr>
-						<td>
-							<h2>会社概要</h2>
-							<p>ああああ</p>
-						</td>
-						<td>
-							<h2>利用ガイドライン</h2>
-							<p>ああああ</p>
-						</td>
-						<td>
-							<h2>利用規約</h2>
-							<p>ああああ</p>
-						</td>
-						<td>
-							<button>リンク1</button><br>
-							<button>リンク2</button>
-						</td>
-					</tr>
-				</table>
+				<?php require_once '../../../../../server/init.php'; Footer();?>
 			</footer>
 			<script src="main.js"></script>
 		</body>
