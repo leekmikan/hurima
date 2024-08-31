@@ -1,6 +1,6 @@
 <?php
 require_once('../../../../server/const.php');
-require_once('../../../../server/stripe-php-13.10.0-beta.3/stripe-php-13.10.0-beta.3/init.php');
+require_once('../../../../server/'.$STRIPE_API);
 \Stripe\Stripe::setApiKey($SECRET);
 session_start();
 				if (isset($_SESSION['id'])) {
