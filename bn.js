@@ -1,5 +1,5 @@
-const BN_LEN = 2;
-var change_time = [0,5000];
+const BN_LEN = 2; //バナー数.
+var change_time = [0,5000]; //[1]...変更までの時間.
 change_time[0] = change_time[1];
 let bnn = 0;
 //画像更新.
@@ -21,5 +21,5 @@ setInterval(function(){
     }
 }, 100);
 
-//初回実行
+//初回実行.
 b_upd();
