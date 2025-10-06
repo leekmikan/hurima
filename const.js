@@ -1,1 +1,2 @@
-const PUBLIC_KEY = "pk_test_51PAkRdBl4em3MIGo22v3hr9oactDb3r88iqYeBdC5qukJ0i5JgEXMuuZ2TKzQ6Msibbe5iCBQLEJYPsaVXyzaf5b000hPTLqbj";
+//パブリックキーを一部隠します.
+const PUBLIC_KEY = "pk_test_51PAkRdBl4em3MIGo22v3hr9oactDb3r88iqYeBdC5qukJ0i5JgEXMuuZ2TKzQ6Msibbe5iXXXXXXX";
