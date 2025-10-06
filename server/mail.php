@@ -15,5 +15,6 @@ function Send_mail($to,$subject,$message){
     mb_language("Japanese");
     mb_send_mail($to, $subject, $message, $headers);
 }
-//Send_mail("uki_shin@docomo.ne.jp","タイトル","<html><body><h1>本文</h1></body></html>");
+//メールアドレスを隠しました.
+//Send_mail("sample@docomo.ne.jp","タイトル","<html><body><h1>本文</h1></body></html>");
 ?>
