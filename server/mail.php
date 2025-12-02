@@ -1,7 +1,7 @@
 <?php
 function Send_mail($to,$subject,$message){
     
-    $headers = "From:uki.shin0917@gmail.com";
+    $headers = "From:" . $to;
     $headers .= "\r\n";
     if((strpos($to, "docomo.ne.jp") !== false) || true){ //文字化け条件確認中
         $headers .= "MIME-Version: 1.0\r\n"
